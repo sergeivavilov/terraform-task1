@@ -14,7 +14,7 @@ resource "aws_instance" "wordpress_ec2_alternate" {
   instance_type = "t2.micro"
   key_name      = aws_key_pair.ssh_key.key_name
   subnet_id     = aws_subnet.public_subnet_1.id
-  security_groups = [aws_security_group.wordpress_sg.name]
+  vpc_security_group_ids = [aws_security_group.wordpress_sg.id]
 
   tags = {
     Name = "wordpress-ec2"
