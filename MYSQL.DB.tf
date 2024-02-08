@@ -1,6 +1,12 @@
 #MySQL DB Instance
 
 resource "aws_db_instance" "mysql" {
+
+
+    // Other configurations...
+  skip_final_snapshot = true
+
+
   allocated_storage    = 20
   storage_type         = "gp2"
   engine               = "mysql"
@@ -26,3 +32,5 @@ resource "aws_db_subnet_group" "mysql_subnet_group" {
     Name = "My DB Subnet Group"
   }
 }
+
+
